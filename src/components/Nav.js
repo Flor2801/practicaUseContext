@@ -1,13 +1,16 @@
+import {useContext} from 'react' 
 import styled from 'styled-components'
+import UserContext from '../Context/UserContext';
 
 const NavBar = styled.nav`
-  background-color: blue;
-  height: 30px;
+background-color: ${props => props.esUsuarioPremium ? "pink" : "red"};
+height: 30px;
 `;
 
 const Nav = () => {
+  const {esUsuarioPremium} = useContext(UserContext);
   return (
-    <NavBar>
+    <NavBar esUsuarioPremium={esUsuarioPremium}>
       <h1>Soy Nav</h1>
     </NavBar>
   )

@@ -12,10 +12,8 @@ const StyledButton = styled.button`
 `;
 
 
-
 const Button = ({title}) => {
   const {esUsuarioPremium} = useContext(UserContext);
-  console.log(esUsuarioPremium)
   return (
     <StyledButton esUsuarioPremium={esUsuarioPremium}>
       {esUsuarioPremium ? title.toUpperCase() : title}
